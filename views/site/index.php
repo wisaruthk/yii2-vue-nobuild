@@ -28,6 +28,7 @@ $this->title = 'My Yii Application';
                 <li><a href="/vue/vuetify-dialog-template">Vuetify Dialog Template</a> ตัวอย่างการใช้ template</li>
                 <li><a href="/vue/router">Router</a> ตัวอย่างยการใช้ Router</li>
                 <li><a href="/vue/vuex">Vuex</a> ตัวอย่างยการใช้ Vuex</li>
+                <li><a href="/vue/vuex-fetch">Vuex Fetch</a> ตัวอย่างยการใช้ Vuex ร่วมกับการ fetch data จาก backend</li>
             </ul>
         </div>
 

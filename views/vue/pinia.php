@@ -9,7 +9,7 @@ $this->title = 'PDPA - ROPA : Record of Activities';
 ?>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@3.4.0/dist/vuetify.min.js"></script>
-<script src="https://unpkg.com/vuex@4.1.0/dist/vuex.global.js"></script>
+<script src="https://unpkg.com/pinia@2.1.7/dist/pinia.iife.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.4.0/dist/vuetify.min.css"/>
 
 <div class="site-index">
@@ -23,27 +23,12 @@ $this->title = 'PDPA - ROPA : Record of Activities';
 <script type="module">
     const { createApp } = Vue
     const { createVuetify } = Vuetify
-    const { createStore } = Vuex
+    const { createPinia } = Pinia // ไม่สามารถใช้งานได้ Pinia ยังไม่สนับสนุนการทำงานแบบ CDN เพียงพอ
 
     const vuetify = createVuetify()
 
     // Create a new store instance.
-    const store = createStore({
-        state () {
-            return {
-                count: 0
-            }
-        },
-        mutations: {
-            increment (state) {
-                state.count++
-            },
-            incrementWithPayload (state, payload) {
-                state.count += payload.amount
-            }
-        },
-        strict:true
-    })
+    const pinia = createPinia()
 
     // Components
     const Counter = {
@@ -75,6 +60,6 @@ $this->title = 'PDPA - ROPA : Record of Activities';
     
     app
     .use(vuetify)
-    .use(store)
+    .use(pinia)
     .mount('#app')
 </script>

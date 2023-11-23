@@ -116,6 +116,11 @@ class VueController extends Controller
         return $this->render('vuex');
     }
 
+    public function actionVuexFetch()
+    {
+        return $this->render('vuex-fetch');
+    }
+
     public function actionPinia()
     {
         return $this->render('pinia');
