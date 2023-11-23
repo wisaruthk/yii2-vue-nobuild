@@ -27,6 +27,7 @@ $this->title = 'My Yii Application';
                 <li><a href="/vue/vuetify-dialog-importmap">Vuetify Dialog Importmap</a> ตัวอย่างการ import js แบบ Import Map</li>
                 <li><a href="/vue/vuetify-dialog-template">Vuetify Dialog Template</a> ตัวอย่างการใช้ template</li>
                 <li><a href="/vue/router">Router</a> ตัวอย่างยการใช้ Router</li>
+                <li><a href="/vue/vuex">Vuex</a> ตัวอย่างยการใช้ Vuex</li>
             </ul>
         </div>
 

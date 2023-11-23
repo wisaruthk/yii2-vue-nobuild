@@ -110,4 +110,14 @@ class VueController extends Controller
     {
         return $this->render('router');
     }
+
+    public function actionVuex()
+    {
+        return $this->render('vuex');
+    }
+
+    public function actionPinia()
+    {
+        return $this->render('pinia');
+    }
 }
