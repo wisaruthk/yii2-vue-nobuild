@@ -51,6 +51,11 @@ $config = [
         ],
         
     ],
+    'modules'=>[
+        'service'=> [
+            'class'=>'app\modules\service\Module'
+        ]
+    ],
     'params' => $params,
 ];
 

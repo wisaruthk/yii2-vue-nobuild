@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 
 class VueController extends Controller
 {
+    public $enableCsrfValidation = false;
     /**
      * {@inheritdoc}
      */
@@ -68,6 +69,17 @@ class VueController extends Controller
         return [
             'users'=>$users,
             'totalItems'=>count($users)
+        ];
+    }
+
+    public function actionSaveUser()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $request = Yii::$app->request;
+        $post = $request->post();
+        
+        return [
+            'status'=>print_r($post)
         ];
     }
 

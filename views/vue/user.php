@@ -45,6 +45,7 @@ $this->title = 'PDPA - ROPA : Record of Activities'; ?>
     <v-container>
       <v-btn append-icon="$vuetify">Button</v-btn>
       <v-btn append-icon="fa-solid fa-plus">DEMO</v-btn>
+      <v-btn @click="saveUser">Save User</v-btn>
     </v-container>
     <v-container>
         <div class="text-center">
@@ -55,6 +56,9 @@ $this->title = 'PDPA - ROPA : Record of Activities'; ?>
             ></v-pagination>
           </div>
     </v-container>
+    <v-container>
+        <my-list :my_items="serverItems"></my-list>
+    </v-container>
   </div>
 </div>
 
@@ -63,6 +67,7 @@ $this->title = 'PDPA - ROPA : Record of Activities'; ?>
   const { createVuetify } = Vuetify;
   const { VuetifyDateAdapter } = Vuetify;
   const { createRouter } = VueRouter;
+  import MyList from '/vue-modules/MyList.js'
   //import FakeAPI from '/vue-modules/FakeAPI.js'
 
   const vuetify = createVuetify({
@@ -92,6 +97,9 @@ $this->title = 'PDPA - ROPA : Record of Activities'; ?>
 
 
   const app = createApp({
+    components: {
+        MyList
+    },
     data: () => ({
         page:1,
       itemsPerPage: 5,
@@ -140,6 +148,28 @@ $this->title = 'PDPA - ROPA : Record of Activities'; ?>
         this.$router.push('/about')
         //window.location.href = './ropa';
         
+      },
+      saveUser(){
+        // POST METHOD
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+        fetch("./save-user",{ 
+            method:"POST",
+            headers: {
+                'Content-Type':'application/json',
+                'X-CSRF-Token':csrfToken,
+            },
+            body: JSON.stringify({a:1,b:'Textual content'})
+        })
+        .then(response => {
+            if (!response.ok) {
+              throw new Error("HTTP error! Status: ${response.status}");
+            }
+            return response.json();
+        }) 
+        .then((data)=>{
+            console.log(data);
+        })
       }
     },
     

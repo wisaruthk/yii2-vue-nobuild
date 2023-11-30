@@ -29,6 +29,8 @@ $this->title = 'My Yii Application';
                 <li><a href="/vue/router">Router</a> ตัวอย่างยการใช้ Router</li>
                 <li><a href="/vue/vuex">Vuex</a> ตัวอย่างยการใช้ Vuex</li>
                 <li><a href="/vue/vuex-fetch">Vuex Fetch</a> ตัวอย่างยการใช้ Vuex ร่วมกับการ fetch data จาก backend</li>
+                <li><a href="/service/default/index">แยกเขียน JS ใน Module แบบ 1</a> ใช้ Asset Bundle ในการแยก JS ไว้ใน Module</li>
+                <li><a href="/service/default/app">แยกเขียน JS ใน Module แบบ 2 (แนะนำ)</a> แยก js ตั้งแต่การสร้าง createVue เลย ทำให้ import component ได้ง่ายขึ้น</li>
             </ul>
         </div>
 
